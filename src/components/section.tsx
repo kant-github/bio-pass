@@ -20,7 +20,7 @@ export default function Section({ className, children, showBG, fatherRelative, m
             borderB && "border-b",
             fatherRelative && "relative",
         )}>
-            <div className={cn("md:max-w-3xl mx-auto border-neutral-800/70 w-full",
+            <div className={cn("w-full mx-auto border-neutral-800/70 max-w-full sm:max-w-3xl md:max-w-3xl lg:max-w-3xl",
                 borderX && "border-x",
                 motherRelative && "relative",
             )}>
