@@ -1,10 +1,20 @@
 import type { Metadata } from "next";
 import { Iceland } from "next/font/google";
 import "./globals.css";
+import { Geist, Geist_Mono } from "next/font/google";
 
 export const custom_font = Iceland({
     weight: ["400"],
 })
+const geistSans = Geist({
+    variable: "--font-geist-sans",
+    subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+    variable: "--font-geist-mono",
+    subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
     title: "Rshi Kant",
@@ -19,7 +29,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`bg-darkest`}
+                className={`${geistSans.variable} ${geistMono.variable} bg-darkest tracking-wide`}
             >
                 {children}
             </body>
