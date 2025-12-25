@@ -74,7 +74,7 @@ export default function AboutSection(): JSX.Element {
                                     height={20}
                                     alt="yc"
                                     className="inline-block"
-                                /> combinator-backed
+                                />-combinator backed
                             </span>
                         )}
                         {'rest' in item && item.rest}

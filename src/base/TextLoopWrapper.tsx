@@ -9,7 +9,7 @@ interface TextLoopWrapperProps {
 
 export default function TextLoopWrapper({ slugs, className }: TextLoopWrapperProps): JSX.Element {
     return (
-        <TextLoop interval={3} className='font-mono text-sm'>
+        <TextLoop interval={3} className='font-mono text-sm w-full whitespace-normal'>
             {slugs.map((slug, index) => (
                 <span className={cn(className)} key={index}>{slug}</span>
             ))}
