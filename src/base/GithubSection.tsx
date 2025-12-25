@@ -1,7 +1,14 @@
 
+"use client";
+
 import { JSX } from "react";
+import dynamic from "next/dynamic";
 import Section from "../components/section";
-import { GitHubCalendar } from "react-github-calendar";
+
+const GitHubCalendar = dynamic(
+    () => import("react-github-calendar").then((mod) => mod.GitHubCalendar),
+    { ssr: false }
+);
 
 export default function GithubSection(): JSX.Element {
     return (
