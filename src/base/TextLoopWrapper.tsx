@@ -11,7 +11,7 @@ export default function TextLoopWrapper({ slugs, className }: TextLoopWrapperPro
     return (
         <TextLoop interval={3} className='font-mono text-sm w-full whitespace-normal'>
             {slugs.map((slug, index) => (
-                <span className={cn(className)} key={index}>{slug}</span>
+                <span className={cn("block", className)} key={index}>{slug}</span>
             ))}
         </TextLoop>
     )

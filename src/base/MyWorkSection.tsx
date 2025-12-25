@@ -55,7 +55,7 @@ export default function MyWorkSection(): JSX.Element {
                     {projects.map((project, index) => (
                         <div key={index} className="relative flex gap-4 sm:gap-6">
                             <div className="flex flex-col items-center shrink-0">
-                                <FaRegCalendar className="w-10 h-10 p-1 rounded-sm bg-dark text-light/70 border-2 border-neutral-700" />
+                                <FaRegCalendar className="w-10 h-10 p-1.5 rounded-lg bg-dark text-light/20 border-2 border-neutral-700" />
                             
                                 <div className="w-0.5 bg-neutral-700 flex-1 min-h-[100px]" />
 

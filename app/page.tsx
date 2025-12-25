@@ -16,7 +16,7 @@ export default function Home() {
         <div className="flex flex-col bg-darkest w-full max-w-full overflow-x-hidden">
             <Section borderT={false} className="h-2" borderX={false} borderB={false} isFirst />
             <Nav />
-            <Section motherRelative borderB={false} className={cn("text-light font-bold text-2xl sm:text-3xl md:text-4xl lg:text-[4rem] h-48 sm:h-56 md:h-60 flex items-center justify-center text-center px-4", custom_font.className)} showBG={true}>
+            <Section bgType="dots" motherRelative borderB={false} className={cn("text-light font-bold text-2xl sm:text-3xl md:text-4xl lg:text-[4rem] h-48 sm:h-56 md:h-60 flex items-center justify-center text-center px-4", custom_font.className)} showBG={true}>
                 Need an Engineer ?
             </Section>
             <Section className="flex h-38 sm:h-42 md:h-44 overflow-hidden">
