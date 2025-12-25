@@ -3,6 +3,7 @@ import Section from "../components/section";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { IoIosLink } from "react-icons/io";
+import Link from "next/link";
 
 
 interface SocialProfile {
@@ -45,30 +46,32 @@ export default function SocialProfile(): JSX.Element {
             <Section borderT={false} borderB={false}>
                 <div className="w-full grid grid-cols-1 sm:grid-cols-2 text-light">
                     {social_profile.map((profile, index) => (
-                        <div
-                            key={index}
-                            className={cn(
-                                "p-4 flex items-center hover:bg-neutral-900 cursor-pointer group border-b border-neutral-800/70",
-                                index % 2 === 0 ? "sm:border-r" : "sm:border-l",
-                            )}
-                        >
-                            <div className="w-full flex justify-start gap-x-4">
-                                <div className="rounded-xl outline-[#363a3c] outline-2 overflow-hidden">
-                                    <Image
-                                        src={profile.image}
-                                        alt={profile.media}
-                                        width={40}
-                                        height={40}
-                                        className={cn("shrink-0 aspect-square object-cover", profile.media === "Instagram" && "invert")}
-                                    />
+                        <Link target="_blank" href={profile.url} key={index}>
+                            <div
+                                key={index}
+                                className={cn(
+                                    "p-4 flex items-center hover:bg-neutral-900 cursor-pointer group border-b border-neutral-800/70",
+                                    index % 2 === 0 ? "sm:border-r" : "sm:border-l",
+                                )}
+                            >
+                                <div className="w-full flex justify-start gap-x-4">
+                                    <div className="rounded-xl outline-[#363a3c] outline-2 overflow-hidden">
+                                        <Image
+                                            src={profile.image}
+                                            alt={profile.media}
+                                            width={40}
+                                            height={40}
+                                            className={cn("shrink-0 aspect-square object-cover", profile.media === "Instagram" && "invert")}
+                                        />
+                                    </div>
+                                    <div className="flex flex-col items-start justify-center">
+                                        <span className="group-hover:underline">{profile.media}</span>
+                                        <span className="text-light/70 text-xs">{profile.username}</span>
+                                    </div>
                                 </div>
-                                <div className="flex flex-col items-start justify-center">
-                                    <span className="group-hover:underline">{profile.media}</span>
-                                    <span className="text-light/70 text-xs">{profile.username}</span>
-                                </div>
+                                <IoIosLink />
                             </div>
-                            <IoIosLink />
-                        </div>
+                        </Link>
                     ))}
                 </div>
             </Section>
