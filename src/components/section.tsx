@@ -16,7 +16,7 @@ interface SectionProps {
 
 export default function Section({ className, children, showBG, fatherRelative, motherRelative, bgType = 'slash', borderX = true, borderT = true, borderB = true }: SectionProps) {
     return (
-        <section className={cn("w-full border-neutral-800/70",
+        <section className={cn("w-full border-neutral-800/70 md:px-0 px-4",
             borderT && "border-t",
             borderB && "border-b",
             fatherRelative && "relative",

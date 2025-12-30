@@ -59,6 +59,13 @@ body {
   background: #0a0a0a;
   color: var(--foreground);
   font-family: Nocturn;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
 
 /* Regular */
@@ -86,6 +93,15 @@ body {
   font-weight: 700;
   font-style: normal;
   font-display: swap;
+}
+
+/* Custom utility class to hide scrollbar */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
 
 :root {
