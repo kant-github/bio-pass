@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Iceland } from "next/font/google";
+import { Geostar_Fill, Iceland } from "next/font/google";
 import "./globals.css";
 import { Geist, Geist_Mono } from "next/font/google";
 
-export const custom_font = Iceland({
+export const custom_font = Geostar_Fill({
     weight: ["400"],
 })
 const geistSans = Geist({
