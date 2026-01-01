@@ -47,20 +47,14 @@
   --radius-4xl: calc(var(--radius) + 16px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #09090b;
-  }
-}
-
 html,
 body {
-  background: #0a0a0a;
-  color: var(--foreground);
+  background: var(--theme-darkest);
+  color: var(--theme-light);
   font-family: Nocturn;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 html::-webkit-scrollbar,
@@ -180,4 +174,9 @@ body::-webkit-scrollbar {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+::view-transition-old(root), ::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
 }

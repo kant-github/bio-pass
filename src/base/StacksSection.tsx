@@ -21,7 +21,7 @@ export const stacks: Stack[] = [
     },
     {
         name: "Socket.IO",
-        icon: <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original.svg" alt="Socket.IO" width={48} height={48} className="w-8 h-8 sm:w-12 sm:h-12 invert" />,
+        icon: <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original.svg" alt="Socket.IO" width={48} height={48} className="w-8 h-8 sm:w-12 sm:h-12 dark:invert" />,
         url: "https://socket.io"
     },
     {
@@ -31,7 +31,7 @@ export const stacks: Stack[] = [
     },
     {
         name: "Kafka",
-        icon: <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original.svg" alt="Kafka" width={48} height={48} className="w-8 h-8 sm:w-12 sm:h-12 invert" />,
+        icon: <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original.svg" alt="Kafka" width={48} height={48} className="w-8 h-8 sm:w-12 sm:h-12 dark:invert" />,
         url: "https://kafka.apache.org"
     },
     {
@@ -46,12 +46,12 @@ export const stacks: Stack[] = [
     },
     {
         name: "GitHub",
-        icon: <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" width={40} height={40} className="w-8 h-8 sm:w-10 sm:h-10 invert" />,
+        icon: <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" width={40} height={40} className="w-8 h-8 sm:w-10 sm:h-10 dark:invert" />,
         url: "https://github.com"
     },
     {
         name: "Next.js",
-        icon: <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" width={48} height={48} className="w-8 h-8 sm:w-12 sm:h-12 invert" />,
+        icon: <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" width={48} height={48} className="w-8 h-8 sm:w-12 sm:h-12 dark:invert" />,
         url: "https://nextjs.org"
     },
     {
@@ -71,12 +71,12 @@ export const stacks: Stack[] = [
     },
     {
         name: "Prisma",
-        icon: <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prisma/prisma-original.svg" alt="Prisma" width={48} height={48} className="w-8 h-8 sm:w-12 sm:h-12 invert" />,
+        icon: <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prisma/prisma-original.svg" alt="Prisma" width={48} height={48} className="w-8 h-8 sm:w-12 sm:h-12 dark:invert" />,
         url: "https://www.prisma.io"
     },
     {
         name: "Turborepo",
-        icon: <Image src="https://logo.svgcdn.com/logos/turborepo.svg" alt="Turborepo" width={48} height={48} className="w-8 h-8 sm:w-12 sm:h-12 invert" />,
+        icon: <Image src="https://logo.svgcdn.com/logos/turborepo.svg" alt="Turborepo" width={48} height={48} className="w-8 h-8 sm:w-12 sm:h-12 dark:invert" />,
         url: "https://turbo.build"
     },
     {

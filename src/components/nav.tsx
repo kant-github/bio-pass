@@ -1,6 +1,8 @@
-import Link from "next/link";
+"use client";
+
 import { FaGithub } from "react-icons/fa";
 import Section from "./section";
+import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 
 interface NavItem {
     label?: string;
@@ -25,13 +27,14 @@ export default function Nav() {
             {nav_items.map((item, index) => (
                 <div className="flex items-center justify-center gap-x-1 sm:gap-x-2 cursor-pointer" key={index}>
                     {item.icon && (
-                        <div className="hover:bg-dark h-7 w-7 sm:h-8 sm:w-8 flex items-center justify-center rounded-1">
+                        <div className="hover:bg-hover h-7 w-7 sm:h-8 sm:w-8 flex items-center justify-center rounded-md">
                             {item.icon}
                         </div>
                     )}
                     {item.label}
                 </div>
             ))}
+            <AnimatedThemeToggler className="hover:bg-hover h-7 w-7 sm:h-8 sm:w-8 flex items-center justify-center rounded-md cursor-pointer transition-colors [&_svg]:size-4" />
         </Section>
     )
 }

@@ -1,3 +1,4 @@
+"use client";
 import Section from "../components/section";
 import { JSX } from "react";
 import { FaCode } from "react-icons/fa6";
@@ -8,13 +9,20 @@ import { MdWebStories } from "react-icons/md";
 import { MdOutlineAccessTime } from "react-icons/md";
 import { MdOutlineEmail } from "react-icons/md";
 import { PiGenderIntersexBold } from "react-icons/pi";
+import { useLocalTime } from "../hooks/useLocalTime";
+import YcombinatorBadge from "./yx";
 
 export default function TickerInformation(): JSX.Element {
+    const { time, difference } = useLocalTime();
+
     return (
         <Section borderT={false} className="tracking-wider">
             <div className="flex items-center gap-2 text-light text-sm p-4">
                 <IconWrapper icon={<FaCode />} />
-                <span>Senior Frontend Developer & UI Design Lead @AppX</span>
+                <div className="flex items-center justify-center gap-x-4">
+                    <span>Developer @AppX</span>
+                    <YcombinatorBadge />
+                </div>
             </div>
             <div className="flex items-center gap-2 text-light text-sm px-4">
                 <IconWrapper icon={<PiLightbulbDuotone />} />
@@ -32,13 +40,13 @@ export default function TickerInformation(): JSX.Element {
                     </div>
                     <div className="flex items-center gap-2 text-light text-sm">
                         <IconWrapper icon={<MdWebStories />} />
-                        <span>krishikant.com</span>
+                        <span>kantrishi.com</span>
                     </div>
                 </section>
                 <section className="space-y-5 px-4 pb-4">
                     <div className="flex items-center gap-2 text-light text-sm">
                         <IconWrapper icon={<MdOutlineAccessTime />} />
-                        <span>18:48 // 1h ahead</span>
+                        <span>{time} {difference && `// ${difference}`}</span>
                     </div>
                     <div className="flex items-center gap-2 text-light text-sm min-w-0">
                         <IconWrapper icon={<MdOutlineEmail />} />
@@ -60,7 +68,7 @@ interface IconWrapperProps {
 
 export function IconWrapper({ icon }: IconWrapperProps) {
     return (
-        <span className="h-6 w-6 aspect-square inline-flex items-center justify-center text-light/40 bg-dark rounded-md border border-light/10 outline outline-offset-1">
+        <span className="h-6 w-6 aspect-square inline-flex items-center justify-center text-light/40 bg-dark rounded-md border border-border outline outline-offset-1">
             {icon}
         </span>
     )

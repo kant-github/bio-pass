@@ -1,7 +1,34 @@
 @theme {
   --color-primary: #6c44fc;
-  --color-darkest: #09090b;
-  --color-darker: #121314;
-  --color-dark: #171819;
-  --color-light: #fdf9f0;
+
+  /* Theme-aware colors - these swap based on .dark class */
+  --color-darkest: var(--theme-darkest);
+  --color-darker: var(--theme-darker);
+  --color-dark: var(--theme-dark);
+  --color-light: var(--theme-light);
+  --color-border: var(--theme-border);
+  --color-muted: var(--theme-muted);
+  --color-hover: var(--theme-hover);
+}
+
+/* Light mode (default) */
+:root {
+  --theme-darkest: #ffffff;
+  --theme-darker: #f8f9fa;
+  --theme-dark: #e9ecef;
+  --theme-light: #1a1a1a;
+  --theme-border: rgba(0, 0, 0, 0.15);
+  --theme-muted: #6b7280;
+  --theme-hover: #e5e7eb;
+}
+
+/* Dark mode */
+.dark {
+  --theme-darkest: #09090b;
+  --theme-darker: #121314;
+  --theme-dark: #171819;
+  --theme-light: #fdf9f0;
+  --theme-border: rgba(255, 255, 255, 0.15);
+  --theme-muted: #9ca3af;
+  --theme-hover: #27272a;
 }

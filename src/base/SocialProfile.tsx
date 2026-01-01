@@ -50,7 +50,7 @@ export default function SocialProfile(): JSX.Element {
                             <div
                                 key={index}
                                 className={cn(
-                                    "p-4 flex items-center hover:bg-neutral-900 cursor-pointer group border-b border-neutral-800/70",
+                                    "p-4 flex items-center hover:bg-hover cursor-pointer group border-b border-border",
                                     index % 2 === 0 ? "sm:border-r" : "sm:border-l",
                                 )}
                             >
@@ -61,7 +61,7 @@ export default function SocialProfile(): JSX.Element {
                                             alt={profile.media}
                                             width={40}
                                             height={40}
-                                            className={cn("shrink-0 aspect-square object-cover", profile.media === "Instagram" && "invert")}
+                                            className={cn("shrink-0 aspect-square object-cover", profile.media === "Instagram" && "dark:invert")}
                                         />
                                     </div>
                                     <div className="flex flex-col items-start justify-center">

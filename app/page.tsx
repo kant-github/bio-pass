@@ -14,7 +14,7 @@ import Image from "next/image";
 export default function Home() {
 
     return (
-        <div className="flex flex-col bg-darkest w-full max-w-full overflow-x-hidden no-scrollbar">
+        <div className="flex flex-col bg-darkest w-full max-w-full overflow-x-hidden no-scrollbar relative">
             <Section borderT={false} className="h-2" borderX={false} borderB={false} isFirst />
             <Nav />
             <Section motherRelative borderB={false} className={cn("text-light italic font-bold text-2xl sm:text-3xl md:text-4xl lg:text-[3.5rem] h-48 sm:h-56 md:h-60 flex items-center justify-center text-center px-4", custom_font.className)}>
@@ -22,10 +22,10 @@ export default function Home() {
                     src={"/images/city.jpg"}
                     fill
                     unoptimized
-                    className="filter grayscale opacity-40 inset-0"
+                    className="filter grayscale opacity-90 inset-0"
                     alt="city"
                 />
-                <span className="text-white z-999">Product Mindset</span>
+                <span className="text-light z-999">Product Mindset</span>
             </Section>
             <HeadlinesSection />
             <Section fatherRelative showBG borderT={false} className="text-light flex items-center justify-end gap-x-2 sm:gap-x-4 px-4 h-10 text-sm sm:text-base" />

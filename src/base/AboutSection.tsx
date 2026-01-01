@@ -1,11 +1,12 @@
 import { JSX } from "react";
 import Section from "../components/section";
 import Image from "next/image";
+import YcombinatorBadge from "./yx";
 
 const portfolioData = {
     intro: [
         {
-            text: "Design Engineer with 5+ years building pixel-perfect interfaces and scalable backend systems."
+            text: "Treat me as someone who writes pixel-perfect interfaces and scalable backend systems."
         },
         {
             text: "Specialized in ",
@@ -33,7 +34,7 @@ const portfolioData = {
             github: "https://github.com/bottle-nex/winterfell/",
             bullets: [
                 "Created interactive LLM dashboard with real-time reasoning visualization.",
-                "Built custom Kubernetes-based E2E environment for isolated Anchor builds.",
+                "Built custom Kubernetes-based E2B environment for isolated Anchor builds.",
                 "Engineered parser system to extract and display live LLM thought processes."
             ]
         },
@@ -68,13 +69,7 @@ export default function AboutSection(): JSX.Element {
                         {item.suffix}
                         {('ycBacked' in item && item.ycBacked) && (
                             <span className="inline-flex items-center align-middle gap-x-0.5 ml-1">
-                                <Image
-                                    src={"/images/yc.webp"}
-                                    width={20}
-                                    height={20}
-                                    alt="yc"
-                                    className="inline-block"
-                                />-combinator backed
+                                <YcombinatorBadge />
                             </span>
                         )}
                         {'rest' in item && item.rest}
