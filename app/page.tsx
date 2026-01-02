@@ -10,14 +10,15 @@ import StackSetion from "@/src/base/StacksSection";
 import MyWorkSection from "@/src/base/MyWorkSection";
 import HeadlinesSection from "@/src/base/HeadlinesSection";
 import Image from "next/image";
+import FooterSection from "@/src/base/FooterSection";
 
 export default function Home() {
 
     return (
-        <div className="flex flex-col bg-darkest w-full max-w-full overflow-x-hidden no-scrollbar relative">
+        <div className="flex flex-col bg-darkest w-full max-w-full no-scrollbar relative">
             <Section borderT={false} className="h-2" borderX={false} borderB={false} isFirst />
             <Nav />
-            <Section motherRelative borderB={false} className={cn("text-light italic font-bold text-2xl sm:text-3xl md:text-4xl lg:text-[3.5rem] h-48 sm:h-56 md:h-60 flex items-center justify-center text-center px-4", custom_font.className)}>
+            <Section motherRelative borderT={false} borderB={false} className={cn("text-light italic font-bold text-2xl sm:text-3xl md:text-4xl lg:text-[2.5rem] h-48 sm:h-56 md:h-60 flex items-center justify-center text-center px-4", custom_font.className)}>
                 <Image
                     src={"/images/city.jpg"}
                     fill
@@ -36,6 +37,7 @@ export default function Home() {
             <GithubSection />
             <StackSetion />
             <MyWorkSection />
+            <FooterSection />
         </div>
     )
 }

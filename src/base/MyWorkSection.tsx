@@ -35,7 +35,7 @@ const projects: Project[] = [
             "Building a blockchain-powered quiz platform inspired by pump.fun, combining gamification with on-chain rewards.",
             "Built clean, user-friendly UI pages optimized for fast gameplay and smooth interactions."
         ],
-        technologies: ["React", "Next.js", "WebSocket", "Redis", "Solana", "Anchor", "TypeScript", "Tailwind CSS"]
+        technologies: ["React", "Next.js", "WebSocket", "Redis", "Pub-Subs", "Solana", "Anchor", "TypeScript", "Tailwind CSS"]
     },
     {
         name: "Winterfell",
@@ -51,7 +51,7 @@ const projects: Project[] = [
             "Built an interactive dashboard for sending prompts to an LLM backend and visualizing real-time responses.",
             "Created a futuristic landing and playground interface, combining high-performance React components with modern design."
         ],
-        technologies: ["React", "Next.js", "Kubernetes", "Docker", "Anchor", "Solana", "AI/LLM", "TypeScript"]
+        technologies: ["React", "Next.js", "Kubernetes", "Docker", "Anchor", "Solana", "AI/LLM", "TypeScript", "NGINX", "CI/CD", "Tailwind CSS", "S3", "CloudFront", "EC2", "Web-Sockets"]
     }
 ];
 
@@ -66,9 +66,9 @@ function ProjectCard({ project }: { project: Project }) {
                     className="w-0.5 bg-border transition-all duration-500 ease-in-out"
                     style={{ minHeight: isExpanded ? '450px' : '80px' }}
                 />
-                <div 
+                <div
                     className="transition-opacity duration-500 ease-in-out"
-                    style={{ 
+                    style={{
                     }}
                 >
                     <IconWrapper icon={<FaCode />} />

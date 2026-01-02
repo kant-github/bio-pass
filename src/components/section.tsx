@@ -12,15 +12,19 @@ interface SectionProps {
     borderB?: boolean;
     fatherRelative?: boolean;
     motherRelative?: boolean;
+    fatherBackground?: React.ReactNode;
+    sticky?: boolean;
 }
 
-export default function Section({ className, children, showBG, fatherRelative, motherRelative, bgType = 'slash', borderX = true, borderT = true, borderB = true }: SectionProps) {
+export default function Section({ className, children, showBG, fatherRelative, fatherBackground, motherRelative, bgType = 'slash', borderX = true, borderT = true, borderB = true, sticky = false }: SectionProps) {
     return (
         <section className={cn("w-full border-border md:px-0 px-4",
             borderT && "border-t",
             borderB && "border-b",
             fatherRelative && "relative",
+            sticky && "sticky top-0 z-50 bg-background",
         )}>
+            {fatherBackground}
             <div className={cn("w-full mx-auto border-border max-w-full sm:max-w-3xl md:max-w-3xl lg:max-w-3xl",
                 borderX && "border-x",
                 motherRelative && "relative",
