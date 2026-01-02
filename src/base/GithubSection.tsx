@@ -41,7 +41,7 @@ export default function GithubSection(): JSX.Element {
                         colorScheme={isDark ? "dark" : "light"}
                         theme={{
                             dark: ['#101013', '#27272a', '#45454a', '#626269', '#818189'],
-                            light: ['#818189', '#626269', '#45454a', '#27272a', '#101013'],
+                            light: ['#aeaeb2', '#86868c', '#45454a', '#27272a', '#101013'],
                         }}
                         labels={{
                             totalCount: '{{count}} contributions in the last year',

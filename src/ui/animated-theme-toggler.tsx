@@ -1,7 +1,11 @@
-import { useCallback, useEffect, useRef, useState } from "react"
+"use client"
+
+import { useCallback, useEffect, useRef } from "react"
 import { Moon, Sun } from "lucide-react"
 import { flushSync } from "react-dom"
 import { cn } from "@/lib/utils"
+import { useTheme } from "next-themes"
+import { IconWrapper } from "../base/TickerIformation"
 
 interface AnimatedThemeTogglerProps extends React.ComponentPropsWithoutRef<"button"> {
     duration?: number
@@ -12,7 +16,7 @@ export const AnimatedThemeToggler = ({
     duration = 400,
     ...props
 }: AnimatedThemeTogglerProps) => {
-    const [isDark, setIsDark] = useState(false)
+    const { setTheme, resolvedTheme } = useTheme()
     const buttonRef = useRef<HTMLButtonElement>(null)
     const audioRef = useRef<HTMLAudioElement | null>(null)
 
@@ -24,31 +28,7 @@ export const AnimatedThemeToggler = ({
         audioRef.current = audio
     }, [])
 
-    useEffect(() => {
-        const savedTheme = localStorage.getItem("theme")
-        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches
-        const shouldBeDark = savedTheme === "dark" || (!savedTheme && prefersDark)
-
-        if (shouldBeDark) {
-            document.documentElement.classList.add("dark")
-        } else {
-            document.documentElement.classList.remove("dark")
-        }
-
-        // Remove this line:
-        // setIsDark(shouldBeDark)
-
-        const observer = new MutationObserver(() => {
-            setIsDark(document.documentElement.classList.contains("dark"))
-        })
-        observer.observe(document.documentElement, {
-            attributes: true,
-            attributeFilter: ["class"],
-        })
-
-        setIsDark(document.documentElement.classList.contains("dark"))
-        return () => observer.disconnect()
-    }, [])
+    const isDark = resolvedTheme === "dark"
 
     const toggleTheme = useCallback(async () => {
         if (!buttonRef.current) return
@@ -58,12 +38,11 @@ export const AnimatedThemeToggler = ({
             audioRef.current.play().catch(() => { })
         }
 
+        const newTheme = isDark ? "light" : "dark"
+
         await document.startViewTransition(() => {
             flushSync(() => {
-                const newTheme = !isDark
-                setIsDark(newTheme)
-                document.documentElement.classList.toggle("dark")
-                localStorage.setItem("theme", newTheme ? "dark" : "light")
+                setTheme(newTheme)
             })
         }).ready
 
@@ -89,7 +68,7 @@ export const AnimatedThemeToggler = ({
                 pseudoElement: "::view-transition-new(root)",
             }
         )
-    }, [isDark, duration])
+    }, [isDark, duration, setTheme])
 
     return (
         <button
@@ -98,7 +77,7 @@ export const AnimatedThemeToggler = ({
             className={cn(className)}
             {...props}
         >
-            {isDark ? <Sun /> : <Moon />}
+            <IconWrapper icon={isDark ? <Sun /> : <Moon />} />
             <span className="sr-only">Toggle theme</span>
         </button>
     )

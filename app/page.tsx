@@ -1,3 +1,4 @@
+"use client";
 import { cn } from "@/lib/utils";
 import Nav from "@/src/components/nav";
 import Section from "@/src/components/section";
@@ -11,13 +12,17 @@ import MyWorkSection from "@/src/base/MyWorkSection";
 import HeadlinesSection from "@/src/base/HeadlinesSection";
 import Image from "next/image";
 import FooterSection from "@/src/base/FooterSection";
+import { useState } from "react";
+import WalletModalV2 from "@/src/base/WalletModal";
 
 export default function Home() {
+    const [walletModalOpen, setWalletModalOpen] = useState<boolean>(false);
 
     return (
         <div className="flex flex-col bg-darkest w-full max-w-full no-scrollbar relative">
             <Section borderT={false} className="h-2" borderX={false} borderB={false} isFirst />
-            <Nav />
+            <Nav walletModalOpen={walletModalOpen} setWalletModalOpen={setWalletModalOpen} />
+            <WalletModalV2 open={walletModalOpen} onClose={() => setWalletModalOpen(false)} />
             <Section motherRelative borderT={false} borderB={false} className={cn("text-light italic font-bold text-2xl sm:text-3xl md:text-4xl lg:text-[2.5rem] h-48 sm:h-56 md:h-60 flex items-center justify-center text-center px-4", custom_font.className)}>
                 <Image
                     src={"/images/city.jpg"}

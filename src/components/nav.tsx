@@ -1,5 +1,4 @@
 "use client";
-
 import { FaGithub } from "react-icons/fa";
 import Section from "./section";
 import { AnimatedThemeToggler } from "@/src/ui/animated-theme-toggler";
@@ -7,32 +6,23 @@ import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { custom_font } from "@/app/layout";
 import { AnimatePresence, motion } from "framer-motion";
+import { IconWrapper } from "../base/TickerIformation";
+import { TiCoffee } from "react-icons/ti";
 
-interface NavItem {
-    label?: string;
-    href?: string;
-    icon?: React.ReactNode;
-    onClick?: () => void;
+interface NavProps {
+    walletModalOpen: boolean;
+    setWalletModalOpen: (open: boolean) => void;
 }
 
-export default function Nav() {
+export default function Nav({ setWalletModalOpen }: NavProps) {
     const [visible, setVisible] = useState<boolean>(true);
     const [scrollY, setScrollY] = useState<number>(0);
-
-    const nav_items: NavItem[] = [
-        {
-            label: "Portfolio",
-        },
-        {
-            icon: <FaGithub />,
-        }
-    ]
 
     useEffect(() => {
         function handleScroll() {
             const currentScrollY = window.scrollY;
-            console.log("currentScrollY:", currentScrollY, "previousScrollY:", scrollY);
-            if (currentScrollY >= 100) {
+
+            if (currentScrollY >= 80) {
                 setVisible(false);
             } else {
                 setVisible(true);
@@ -63,18 +53,22 @@ export default function Nav() {
                     </motion.span>
                 )}
             </AnimatePresence>
-            <div className="flex items-center justify-center py-2 sm:py-3 ">
-                {nav_items.map((item, index) => (
-                    <div className="flex items-center justify-center gap-x-1 sm:gap-x-2 cursor-pointer" key={index}>
-                        {item.icon && (
-                            <div className="hover:bg-hover h-7 w-7 sm:h-8 sm:w-8 flex items-center justify-center rounded-md">
-                                {item.icon}
-                            </div>
-                        )}
-                        {item.label}
-                    </div>
-                ))}
-                <AnimatedThemeToggler className="hover:bg-hover h-7 w-7 sm:h-8 sm:w-8 flex items-center justify-center rounded-md cursor-pointer transition-colors [&_svg]:size-4" />
+            <div className="flex items-center justify-center gap-x-3 py-2 sm:py-3 ">
+                <div
+                    onClick={() => setWalletModalOpen(true)}
+                    className="flex items-center justify-center gap-x-2 cursor-pointer h-6 text-light/40 bg-dark rounded-md border border-border outline outline-offset-1 overflow-hidden aspect-square md:aspect-auto md:px-2"
+                >
+                    <TiCoffee className="shrink-0" />
+                    <span
+                        className="text-xs whitespace-nowrap hidden md:block"
+                    >
+                        buy me a coffee
+                    </span>
+                </div>
+                <div className="flex items-center justify-center gap-x-1 sm:gap-x-2 cursor-pointer">
+                    <IconWrapper icon={<FaGithub />} />
+                </div>
+                <AnimatedThemeToggler className="h-7 w-7 sm:h-8 sm:w-8 flex items-center justify-center rounded-md cursor-pointer transition-colors [&_svg]:size-4" />
             </div>
         </Section>
     )

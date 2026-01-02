@@ -1,6 +1,8 @@
 import { Press_Start_2P } from "next/font/google";
 import "./globals.css";
 import { Geist, Geist_Mono } from "next/font/google";
+import { ThemeProvider } from "next-themes";
+import WalletProviderApp from "@/src/provider/WalletProvider";
 
 export const custom_font = Press_Start_2P({
     weight: ["400"],
@@ -21,11 +23,15 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
+        <html lang="en" suppressHydrationWarning>
             <body
                 className={`${geistSans.variable} ${geistMono.variable} bg-darkest tracking-wide`}
             >
-                {children}
+                <WalletProviderApp>
+                    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+                        {children}
+                    </ThemeProvider>
+                </WalletProviderApp>
             </body>
         </html>
     );

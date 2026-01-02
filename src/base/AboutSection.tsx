@@ -1,7 +1,7 @@
 import { JSX } from "react";
 import Section from "../components/section";
 import Image from "next/image";
-import YcombinatorBadge from "./yx";
+import YcombinatorBadge from "./yc";
 
 const portfolioData = {
     intro: [

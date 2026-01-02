@@ -10,7 +10,7 @@ import { MdOutlineAccessTime } from "react-icons/md";
 import { MdOutlineEmail } from "react-icons/md";
 import { PiGenderIntersexBold } from "react-icons/pi";
 import { useLocalTime } from "../hooks/useLocalTime";
-import YcombinatorBadge from "./yx";
+import YcombinatorBadge from "./yc";
 
 export default function TickerInformation(): JSX.Element {
     const { time, difference } = useLocalTime();
@@ -68,7 +68,7 @@ interface IconWrapperProps {
 
 export function IconWrapper({ icon }: IconWrapperProps) {
     return (
-        <span className="h-6 w-6 aspect-square inline-flex items-center justify-center text-light/40 bg-dark rounded-md border border-border outline outline-offset-1">
+        <span className="h-6 w-6 aspect-square inline-flex items-center justify-center text-light/40 bg-dark rounded-md border border-border outline outline-offset-1 overflow-hidden">
             {icon}
         </span>
     )

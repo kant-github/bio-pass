@@ -1,7 +1,7 @@
 "use client";
 import { JSX, useState } from "react";
 import Section from "../components/section";
-import { FaCode, FaGithub, FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { FaCode, FaGithub } from "react-icons/fa";
 import { FaRegCalendar } from "react-icons/fa6";
 import { IconWrapper } from "./TickerIformation";
 import Link from "next/link";
