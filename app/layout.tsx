@@ -1,21 +1,12 @@
-import { Press_Start_2P } from "next/font/google";
 import "./globals.css";
-import { Geist, Geist_Mono } from "next/font/google";
-import { ThemeProvider } from "next-themes";
 import WalletProviderApp from "@/src/provider/WalletProvider";
+import { Metadata } from "next";
+import { geistSans, geistMono } from "./fonts";
 
-export const custom_font = Press_Start_2P({
-    weight: ["400"],
-})
-const geistSans = Geist({
-    variable: "--font-geist-sans",
-    subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-    variable: "--font-geist-mono",
-    subsets: ["latin"],
-});
+export const metadata: Metadata = {
+    title: "Rishi Kant",
+    description: "I build systems, not apps",
+};
 
 export default function RootLayout({
     children,
@@ -28,9 +19,7 @@ export default function RootLayout({
                 className={`${geistSans.variable} ${geistMono.variable} bg-darkest tracking-wide`}
             >
                 <WalletProviderApp>
-                    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-                        {children}
-                    </ThemeProvider>
+                    {children}
                 </WalletProviderApp>
             </body>
         </html>

@@ -5,7 +5,7 @@ import Section from "@/src/components/section";
 import TickerIformation from "@/src/base/TickerIformation";
 import SocialProfile from "@/src/base/SocialProfile";
 import AboutSection from "@/src/base/AboutSection";
-import { custom_font } from "./layout";
+import { custom_font } from "./fonts";
 import GithubSection from "@/src/base/GithubSection";
 import StackSetion from "@/src/base/StacksSection";
 import MyWorkSection from "@/src/base/MyWorkSection";
