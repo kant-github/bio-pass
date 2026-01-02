@@ -29,7 +29,7 @@ export default function FooterSection(): JSX.Element {
                     initial={{ opacity: 0, y: 50 }}
                     animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
                     transition={{ duration: 0.4, ease: "easeOut", type: "tween" }}
-                    className="flex items-end justify-center text-[8rem] font-bold text-transparent bg-clip-text bg-linear-to-b from-neutral-600 via-neutral-900/20 to-black/10 translate-y-12"
+                    className="flex items-end justify-center text-[4rem] sm:text-[6rem] md:text-[8rem] font-bold text-transparent bg-clip-text bg-linear-to-b from-neutral-600 via-neutral-900/20 to-black/10 translate-y-8 md:translate-y-12"
                 >
                     RISHI KANT
                 </motion.div>

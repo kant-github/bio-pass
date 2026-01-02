@@ -17,7 +17,11 @@ export const AnimatedThemeToggler = ({
     const audioRef = useRef<HTMLAudioElement | null>(null)
 
     useEffect(() => {
-        audioRef.current = new Audio("/audio/click.wav")
+        const audio = new Audio("/audio/click.wav")
+        audio.volume = 0.3
+        audio.preload = "auto"
+        audio.load()
+        audioRef.current = audio
     }, [])
 
     useEffect(() => {

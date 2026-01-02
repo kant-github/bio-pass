@@ -44,6 +44,7 @@ export default function Nav() {
             window.removeEventListener("scroll", handleScroll);
         };
     }, [scrollY]);
+
     return (
         <Section sticky={true} className={cn("text-light flex items-center gap-x-2 sm:gap-x-4 text-sm sm:text-base px-4 sm:px-6 md:px-8 ",
             visible ? "justify-end" : "justify-between"

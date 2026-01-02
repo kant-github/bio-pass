@@ -84,22 +84,25 @@ function ProjectCard({ project }: { project: Project }) {
                             <BsChevronExpand className="w-3 h-3 group-hover:translate-y-0.5 transition-transform" />
                         )}
                     </div>
-                    <div className="flex items-center gap-2 flex-wrap">
-                        <h3 className="text-light text-lg sm:text-xl font-bold">
-                            {project.name}
-                        </h3>
+                    <div className="flex flex-col items-start gap-2 flex-wrap">
+                        <div className="flex items-center justify-start gap-x-3">
+                            <h3 className="text-light text-lg sm:text-xl font-bold">
+                                {project.name}
+                            </h3>
+
+                            <Link
+                                href={project.github}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-light/70 hover:text-light transition-colors"
+                                onClick={(e) => e.stopPropagation()}
+                            >
+                                <FaGithub className="w-4 h-4" />
+                            </Link>
+                        </div>
                         <span className="text-light/80 text-xs px-2 py-0.5 border border-light/30 rounded">
                             {project.type}
                         </span>
-                        <Link
-                            href={project.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-light/70 hover:text-light transition-colors"
-                            onClick={(e) => e.stopPropagation()}
-                        >
-                            <FaGithub className="w-4 h-4" />
-                        </Link>
                     </div>
                     <p className="text-light/60 text-xs sm:text-sm mt-1 font-light">
                         {project.tagline}
