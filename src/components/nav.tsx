@@ -13,6 +13,7 @@ import {
     TooltipContent,
     TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { TbTicTac } from "react-icons/tb";
 
 interface NavProps {
     walletModalOpen: boolean;
@@ -73,6 +74,16 @@ export default function Nav({ setWalletModalOpen }: NavProps) {
                 )}
             </AnimatePresence>
             <div className="flex items-center justify-center gap-x-3 py-2 sm:py-3 ">
+                <Tooltip>
+                    <TooltipTrigger className="mt-1" asChild>
+                        <div>
+                            <IconWrapper icon={<TbTicTac className="cursor-pointer" />} />
+                        </div>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                        Play Tic Tac Toe
+                    </TooltipContent>
+                </Tooltip>
                 <Tooltip>
                     <TooltipTrigger asChild>
                         <div

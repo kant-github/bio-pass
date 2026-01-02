@@ -28,7 +28,7 @@ export const social_profile: SocialProfile[] = [
     },
     {
         image: "/images/x.webp",
-        media: "X (Formally Twitter)",
+        media: "X (Formerly Twitter)",
         url: "https://x.com/khairrishi",
         username: "khairrishi",
     },
